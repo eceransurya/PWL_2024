@@ -9,4 +9,5 @@ class WelcomeController extends Controller
     public function hello() {
         return 'helloworld';
     }
+    
 }
