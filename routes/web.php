@@ -1,13 +1,17 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return 'hello world';
+Route::get('/hello', [WelcomeController::class, 'hello']);
+
+Route::get('/baru', function () {
+    return view('baru', ['name'=>'habib']);
 });
 
 Route::get('/world', function () {
@@ -31,3 +35,4 @@ Route::put('mahasiswa/{id}', function ($id) {
 });
 Route::delete('mahasiswa{id}', function ($id) {
 });
+
